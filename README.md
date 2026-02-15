@@ -1,1 +1,1 @@
-# lazaro
+# lazaro — botón outline con mayor contraste

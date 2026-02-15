@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Padrinhos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <audio id="musica" loop>
+    <source src="audio/cancion.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="convite">
+    <img src="img/pagina2.jpg" alt="Mensagem aos padrinhos">
+
+    <button id="btnMusica" class="btn-musica">🔊</button>
+
+    <nav class="navegacion">
+      <a href="index.html" class="btn-outline-sec">← Volver</a>
+    </nav>
+  </main>
+
+<script>
+const audio = document.getElementById("musica");
+const btn = document.getElementById("btnMusica");
+
+audio.volume = 0;
+let reproduciendo = false;
+
+function fadeIn() {
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 1) {
+      vol += 0.05;
+      audio.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+}
+
+document.body.addEventListener("click", () => {
+  if (!reproduciendo) {
+    audio.play();
+    fadeIn();
+    reproduciendo = true;
+  }
+});
+
+btn.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  if (audio.paused) {
+    audio.play();
+    fadeIn();
+    btn.textContent = "🔊";
+  } else {
+    audio.pause();
+    btn.textContent = "🔇";
+  }
+});
+</script>
+
+</body>
+</html>

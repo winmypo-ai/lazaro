@@ -1,0 +1,75 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { width: 100%; height: 100%; }
+
+body {
+  background: #000;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+}
+
+.convite {
+  width: 100vw;
+  height: 100vh;
+  max-width: 900px;
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.convite img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* BOTÓN MÚSICA */
+.btn-musica {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+/* BOTONES */
+.navegacion {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn-outline {
+  text-decoration: none;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-size: 17px;
+  font-weight: 600;
+  background: rgba(0,0,0,0.25);
+  border: 1.5px solid #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+}
+
+.btn-outline-sec {
+  text-decoration: none;
+  color: rgba(255,255,255,0.9);
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.25);
+}
